@@ -4,3 +4,27 @@ h1 {
     padding-top: 50px;
     color:black;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  table {
+    width: 80%;
+    border-collapse: collapse;
+
+  }
+
+  th, td {
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    text-align: center; 
+  }
+
+  th {
+    background-color: #f2f2f2; 
+  }

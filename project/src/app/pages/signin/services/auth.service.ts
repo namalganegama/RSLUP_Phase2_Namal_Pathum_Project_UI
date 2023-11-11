@@ -31,9 +31,24 @@ export class AuthService {
     );
   }
 
+  recoverPassword(params: Recover): Observable<any> {
+    const registerUrl = 'http://127.0.0.1:3000/api/v1/users/forgotPassword';
+
+    return this.http.post(registerUrl, params).pipe(
+      catchError((error) => {
+        console.error('RecoverError:', error);
+        return throwError('An error occurred during recover.');
+      })
+    );
+  }
+
 }
 
 type SignIn = {
   email: string;
   password: string;
+};
+
+type Recover = {
+  email: string;
 };

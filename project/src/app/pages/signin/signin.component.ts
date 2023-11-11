@@ -65,25 +65,25 @@ export class SigninComponent implements OnInit {
     });
   }
 
-  recoverPassword() {
-    this.isRecoveringPassword = true;
-
-    this.authenticationService.recoverPassword(
-      this.form.value.email
-    ).subscribe({
-      next: () => {
-        this.isRecoveringPassword = false;
-        this.snackBar.open("You can recover your password in your email account.", "OK", {
-          duration: 5000
-        });
-      },
-      error: error => {
-        this.isRecoveringPassword = false;
-        this.snackBar.open(error.message, "OK", {
-          duration: 5000
-        });
-      }
-    })
-  }
+   recoverPassword() {
+     this.isRecoveringPassword = true;
+ 
+    this.authService.recoverPassword({
+      email: this.form.value.email
+     }).subscribe({
+       next: () => {
+         this.isRecoveringPassword = false;
+         this.snackBar.open("You can recover your password in your email account.", "OK", {
+           duration: 5000
+         });
+       },
+       error: error => {
+         this.isRecoveringPassword = false;
+         this.snackBar.open(error.message, "OK", {
+           duration: 5000
+         });
+       }
+    });
+   }
 
 }

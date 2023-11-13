@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { PassengerComponent } from './pages/passenger/passenger.component';
+
 const routes: Routes = [
   {
     path: 'signin',
@@ -11,7 +13,13 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./pages/home/home.module')
       .then(m => m.HomeModule)
-  }
+  },
+  {
+    path: 'passenger',
+    loadChildren: () => import('./pages/passenger/passenger.module')
+      .then(m => m.PassengerModule)
+  },
+  
 ];
 
 @NgModule({

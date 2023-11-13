@@ -24,4 +24,8 @@ export class NavbarComponent implements OnInit {
       .subscribe();
   }
 
+  goToPassenger() {
+    this.router.navigate(['passenger']);
+  }
+
 }

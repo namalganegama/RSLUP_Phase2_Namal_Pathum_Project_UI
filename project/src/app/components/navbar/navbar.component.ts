@@ -28,4 +28,12 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['passenger']);
   }
 
+  goToTicketing() {
+    this.router.navigate(['ticketing']);
+  }
+
+  goToHome() {
+    this.router.navigate(['home']);
+  }
+
 }

@@ -5,6 +5,11 @@ import { PassengerComponent } from './pages/passenger/passenger.component';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: () => import('./pages/signin/signin.module')
+    .then(m => m.SigninModule)
+  },
+  {
     path: 'signin',
     loadChildren: () => import('./pages/signin/signin.module')
     .then(m => m.SigninModule)
@@ -18,6 +23,11 @@ const routes: Routes = [
     path: 'passenger',
     loadChildren: () => import('./pages/passenger/passenger.module')
       .then(m => m.PassengerModule)
+  },
+  {
+    path: 'ticketing',
+    loadChildren: () => import('./pages/ticketing/ticketing.module')
+      .then(m => m.TicketingModule)
   },
   
 ];

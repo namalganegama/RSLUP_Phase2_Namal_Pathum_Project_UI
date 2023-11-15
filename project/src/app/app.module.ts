@@ -11,6 +11,7 @@ import { NavbarModule } from './components/navbar/navbar.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PassengerComponent } from './pages/passenger/passenger.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TicketingComponent } from './pages/ticketing/ticketing.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     BlankComponent,
     PassengerComponent,
+    TicketingComponent,
     
 
   ],

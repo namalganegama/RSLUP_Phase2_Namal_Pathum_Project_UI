@@ -36,4 +36,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['home']);
   }
 
+  goToFlight() {
+    this.router.navigate(['flight']);
+  }
+
 }

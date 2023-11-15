@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PassengerComponent } from './pages/passenger/passenger.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TicketingComponent } from './pages/ticketing/ticketing.component';
+import { FlightComponent } from './pages/flight/flight.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { TicketingComponent } from './pages/ticketing/ticketing.component';
     BlankComponent,
     PassengerComponent,
     TicketingComponent,
+    FlightComponent,
     
 
   ],

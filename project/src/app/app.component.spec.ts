@@ -1,19 +1,18 @@
-// import { TestBed } from '@angular/core/testing';
-// import { RouterTestingModule } from '@angular/router/testing';
-// import { AppComponent } from './app.component';
+import { AppComponent } from './app.component';
 
-// describe('AppComponent', () => {
-//   beforeEach(() => TestBed.configureTestingModule({
-//     imports: [RouterTestingModule],
-//     declarations: [AppComponent]
-//   }));
+describe('AppComponent', () => {
+    let fixture: AppComponent;
 
-//   it('should create the app', () => {
-//     const fixture = TestBed.createComponent(AppComponent);
-//     const app = fixture.componentInstance;
-//     expect(app).toBeTruthy();
-//   });
 
+  beforeEach(() => {
+    fixture = new AppComponent();
+  })
+
+  it('should have a title', () => {
+    expect(fixture.title).toEqual('RSLUP Project');
+  });
+
+})
 //   it(`should have as title 'project'`, () => {
 //     const fixture = TestBed.createComponent(AppComponent);
 //     const app = fixture.componentInstance;

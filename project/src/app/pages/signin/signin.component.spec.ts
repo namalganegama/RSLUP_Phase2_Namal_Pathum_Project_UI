@@ -27,11 +27,12 @@ describe('SigninComponent', () => {
         RouterTestingModule.withRoutes([
           {path: 'home', component: BlankComponent}
         ])
+      ],
+      providers: [
+        { provide: AuthenticationService, useValue: authenticationService },
+        { provide: MatSnackBar, useValue: snackBar }
       ]
-    })
-    .overrideProvider(AuthenticationService, {useValue: authenticationService})
-    .overrideProvider(MatSnackBar, {useValue: snackBar})
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SigninComponent);
     location = TestBed.inject(Location);

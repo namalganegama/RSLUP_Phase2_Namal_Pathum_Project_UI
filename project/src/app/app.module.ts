@@ -9,17 +9,29 @@ import { environment } from 'src/environments/environment';
 import { BlankComponent } from './mocks/blank/blank.component';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { HttpClientModule } from '@angular/common/http';
+import { PassengerComponent } from './pages/passenger/passenger.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TicketingComponent } from './pages/ticketing/ticketing.component';
+import { FlightComponent } from './pages/flight/flight.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlankComponent
+    BlankComponent,
+    PassengerComponent,
+    TicketingComponent,
+    FlightComponent,
+    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,

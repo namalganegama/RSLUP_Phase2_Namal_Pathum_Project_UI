@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+    
+    <h1>Passenger Management</h1>
+<br/>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="inputname4">Full Name</label>
+        <input type="name" class="form-control" id="name" placeholder="Enter Name" formControlName="name" >
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Email" formControlName="email" >
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <input type="text" class="form-control" id="address" placeholder="Enter Address" formControlName="address" >
+    </div>
+    <div class="form-group">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity" placeholder="Enter City" formControlName="city" >
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+        <label for="inputMeal">Meal Preference</label>
+        <select id="inputMeal" class="form-control" formControlName="meal" >
+          <option selected>Choose...</option>
+          <option>Rice</option>
+          <option>Noodles</option>
+          <option>Boiled Vegitables</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputSeat">Seat</label>
+        <input type="number" class="form-control" id="inputSeat" formControlName="seat"  >
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="inputRequest">Special Request</label>
+        <input type="text" class="form-control" id="inputRequest" placeholder="Enter Special Recquest" formControlName="request" >
+      </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Agree Terms & Conditions.
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Information</button>
+  </form>
+
+  

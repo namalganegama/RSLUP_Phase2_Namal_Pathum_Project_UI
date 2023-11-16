@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+    
+    <h1>Flight Managemant</h1>
+<br/>
+
+<form [formGroup]="flightForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="flightName">Flight Name</label>
+        <input type="text" class="form-control" id="flightName" placeholder="Enter Flight Name" formControlName="flightname" >
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+        <label for="inputFrom">From</label>
+        <select id="inputFrom" class="form-control" formControlName="from" >
+          <option selected>Choose...</option>
+          <option>Sri Lanka</option>
+          <option>Japan</option>
+          <option>Korea</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputTo">To</label>
+        <select id="inputFrom" class="form-control" formControlName="to" >
+          <option selected>Choose...</option>
+          <option>Sri Lanka</option>
+          <option>Japan</option>
+          <option>Korea</option>
+        </select>
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="dtime">Depature Time</label>
+        <input type="time" class="form-control" id="time" placeholder="Enter Depature Time" formControlName="dtime" >
+    </div>
+    <div class="form-group">
+      <label for="atime">Arrival Time</label>
+      <input type="time" class="form-control" id="atime" placeholder="Enter Arrival Time" formControlName="atime" >
+    </div>
+      <div class="form-group">
+        <label for="gate">Gate</label>
+        <input type="text" class="form-control" id="gate" placeholder="Enter Gate" formControlName="gate" >
+      </div>
+      <div class="form-group">
+        <label for="assignments">Aircraft Assignments</label>
+        <input type="text" class="form-control" id="assignments" placeholder="Enter Assignments" formControlName="assignments"  >
+      </div>
+    <button type="submit" class="btn btn-primary">Add Flight Information</button>
+  </form>
+
+  

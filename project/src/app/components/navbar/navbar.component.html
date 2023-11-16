@@ -1,6 +1,12 @@
 <mat-toolbar color="primary">
-    <div></div>
+    <button (click)="goToHome()" class="button button-1">Home</button>
+    <button (click)="goToPassenger()" class="button button-1">Passenger Management</button>
+    <button (click)="goToTicketing()" class="button button-2">Reservation and Ticketing</button>
+    <button (click)="goToFlight()" class="button button-3">Flight Management</button>
     <button mat-button color="accent" (click)="logout()" test-id="logout-button">
         Logout
     </button>
 </mat-toolbar>
+
+
+

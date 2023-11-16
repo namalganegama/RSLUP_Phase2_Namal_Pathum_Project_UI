@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+    
+    <h1>Reservation and Ticketing</h1>
+<br/>
+
+<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="flightName">Flight Name</label>
+        <input type="text" class="form-control" id="flightName" placeholder="Enter Flight Name" formControlName="flightname" >
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+        <label for="inputFrom">From</label>
+        <select id="inputFrom" class="form-control" formControlName="from" >
+          <option selected>Choose...</option>
+          <option>Sri Lanka</option>
+          <option>Japan</option>
+          <option>Korea</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputTo">To</label>
+        <select id="inputFrom" class="form-control" formControlName="to" >
+          <option selected>Choose...</option>
+          <option>Sri Lanka</option>
+          <option>Japan</option>
+          <option>Korea</option>
+        </select>
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="price">Ticket Price</label>
+        <input type="text" class="form-control" id="price" placeholder="Enter Ticket Price" formControlName="price" >
+    </div>
+    <div class="form-group">
+      <label for="passName">Passenger Name</label>
+      <input type="text" class="form-control" id="passName" placeholder="Enter Passenger Name" formControlName="passname" >
+    </div>
+      <div class="form-group">
+        <label for="inputClass">Class</label>
+        <input type="text" class="form-control" id="inputClass" placeholder="Enter class" formControlName="class" >
+      </div>
+      <div class="form-group">
+        <label for="inputTicket">Number of Tickets</label>
+        <input type="number" class="form-control" id="inputTicket" placeholder="Number of Tickets" formControlName="ticket"  >
+      </div>
+    <button type="submit" class="btn btn-primary">Add Reservation</button>
+  </form>
+
+  

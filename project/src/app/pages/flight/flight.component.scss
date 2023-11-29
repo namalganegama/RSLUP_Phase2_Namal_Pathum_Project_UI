@@ -18,3 +18,145 @@ form {
     margin-bottom: 5px;
   }
   
+
+  h1 {
+    text-align: center;
+    font-size: 50px;
+    padding-top: 50px;
+    color:black;
+}
+
+body {
+    display: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  
+
+  }
+
+  th, td {
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    text-align: center; 
+  }
+
+  th {
+    background-color: #f2f2f2; 
+  }
+
+ 
+.button-32 {
+  background-color: rgb(8, 156, 50);
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  width: 25%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin:10px;
+}
+
+.button-32:not(:disabled):hover,
+.button-32:not(:disabled):focus {
+  outline: 0;
+  background: #f4e603;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+.button-32:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+
+.button-33 {
+  background-color: rgb(172, 18, 28);
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  width: 25%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin:10px;
+}
+
+.button-33:not(:disabled):hover,
+.button-33:not(:disabled):focus {
+  outline: 0;
+  background: #f4e603;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+.button-33:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+.button-34 {
+  background-color: rgb(18, 111, 172);
+  float: right;
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  width: 25%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin:10px;
+}
+
+.button-34:not(:disabled):hover,
+.button-34:not(:disabled):focus {
+  outline: 0;
+  background: #f4e603;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+.button-34:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.hidden-content {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}

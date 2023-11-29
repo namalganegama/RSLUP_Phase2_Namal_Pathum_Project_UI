@@ -26,8 +26,7 @@ export class UserComponent implements OnInit {
       name: '',
       email: '',
       role: '',
-      password: '',
-      // cpassword: ''
+      password: ''
     });
   }
 
@@ -43,12 +42,10 @@ export class UserComponent implements OnInit {
     console.log(formData);
     this.userService.createUser(formData)
       .subscribe(response => {
-        // Handle success response here
         this.refreshPage();
         alert('User Created successfully.');
         console.log('User created:', response);
       }, error => {
-        // Handle error response here
         console.error('Error creating user:', error);
       });
   }
@@ -57,10 +54,8 @@ export class UserComponent implements OnInit {
     const userData = this.userForm.value;
 
     if (userData.id) {
-      // Update operation
       this.updateUser(userData);
     } else {
-      // Create operation
       this.createUser();
     }
   }
@@ -76,7 +71,6 @@ export class UserComponent implements OnInit {
   }
 
   updateUser(updatedUserData:any) {
-    // this.http.put(`${this.apiUrl}/${updatedUserData.id}`, updatedUserData)
     this.userService.updateUser(updatedUserData.id, updatedUserData)
       .subscribe(
         (response:any) => {
@@ -86,7 +80,6 @@ export class UserComponent implements OnInit {
         },
         (error:any) => {
           console.error('Error updating user:', error);
-          // Handle error scenarios
         }
       );
   }

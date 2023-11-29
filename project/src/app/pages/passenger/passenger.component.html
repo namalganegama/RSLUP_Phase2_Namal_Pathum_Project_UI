@@ -1,7 +1,36 @@
 <app-navbar></app-navbar>
-    
-    <h1>Passenger Management</h1>
 <br/>
+<h1>Passenger Management</h1>
+<button (click)="generatePDF()" class="button-34" role="button">Generate PDF</button>
+<br/><br/>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i = index ">
+      <ng-container *ngIf="user.role === 'Passenger'">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <button (click)="editUser(user)" class="button-32" role="button">Edit</button>
+          <button (click)="deleteUser(user)" class="button-33" role="button">Delete</button>
+        </td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>
+<br/><br/>
+<h1>Add Passenger Information</h1>
+<br/><br/>
 
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div class="form-group">

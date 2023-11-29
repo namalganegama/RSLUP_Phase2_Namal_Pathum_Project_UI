@@ -13,6 +13,7 @@ import { PassengerComponent } from './pages/passenger/passenger.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TicketingComponent } from './pages/ticketing/ticketing.component';
 import { FlightComponent } from './pages/flight/flight.component';
+import { UserComponent } from './pages/user/user.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { FlightComponent } from './pages/flight/flight.component';
     PassengerComponent,
     TicketingComponent,
     FlightComponent,
+    UserComponent,
     
 
   ],

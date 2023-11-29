@@ -24,6 +24,10 @@ export class NavbarComponent implements OnInit {
       .subscribe();
   }
 
+  goToUser() {
+    this.router.navigate(['user']);
+  }
+
   goToPassenger() {
     this.router.navigate(['passenger']);
   }

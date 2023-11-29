@@ -1,18 +1,17 @@
-import { Component, OnInit, ViewChild, ElementRef  } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { UserService } from './services/user.service';
+import { User } from './services/user.interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { User } from './services/passenger.interface';
 import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
-import { PassengerService } from './services/passenger.service';
 
 @Component({
-  selector: 'app-user-form',
-  templateUrl: './passenger.component.html',
-  styleUrls: ['./passenger.component.scss']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss']
 })
-export class PassengerComponent implements OnInit {
+export class UserComponent implements OnInit {
   userForm: FormGroup;
-
   @ViewChild('content') content!: ElementRef;
   addForm: FormGroup;
   users: any[] = [];
@@ -21,17 +20,13 @@ export class PassengerComponent implements OnInit {
   successMessage = '';
   errorMessage = '';
 
-  constructor(private userService: PassengerService, private formBuilder: FormBuilder) {
+  constructor(private userService: UserService, private formBuilder: FormBuilder) {
     this.userForm = this.formBuilder.group({
       id:'',
       name: '',
       email: '',
-      address: '',
-      city: '',
-      meal:'',
-      seat:'',
-      request:''
-      
+      role: '',
+      password: ''
     });
   }
 
@@ -42,11 +37,29 @@ export class PassengerComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  createUser() {
     const formData = this.userForm.value;
     console.log(formData);
-    
+    this.userService.createUser(formData)
+      .subscribe(response => {
+        this.refreshPage();
+        alert('User Created successfully.');
+        console.log('User created:', response);
+      }, error => {
+        console.error('Error creating user:', error);
+      });
   }
+
+  submitForm() {
+    const userData = this.userForm.value;
+
+    if (userData.id) {
+      this.updateUser(userData);
+    } else {
+      this.createUser();
+    }
+  }
+
 
   editUser(user:any) {
     this.userForm.patchValue({
@@ -97,7 +110,6 @@ export class PassengerComponent implements OnInit {
     }, 2000);
   }
 
-
   generatePDF() {
     const content = this.content.nativeElement;
 
@@ -108,7 +120,9 @@ export class PassengerComponent implements OnInit {
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
       pdf.addImage(imgData, 0, 0, imgWidth, imgHeight);
-      pdf.save('Passenger Data.pdf');
+      pdf.save('Users Data.pdf');
     });
   }
+
+
 }

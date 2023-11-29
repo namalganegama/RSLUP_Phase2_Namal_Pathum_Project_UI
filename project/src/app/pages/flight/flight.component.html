@@ -1,12 +1,47 @@
 <app-navbar></app-navbar>
-    
-    <h1>Flight Managemant</h1>
 <br/>
+<h1>Flight Management</h1>
+<button (click)="generatePDF()" class="button-34" role="button">Generate PDF</button>
+<br/><br/>
+<table>
+    <thead>
+      <tr>
+        <th>Flight Name</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Depature</th>
+        <th>Arival</th>
+        <th>Gate</th>
+        <th>Assignments</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let flight of flights; let i = index ">
+        <td>{{ flight.name }}</td>
+        <td>{{ flight.from }}</td>
+        <td>{{ flight.to }}</td>
+        <td>{{ flight.dtime }}</td>
+        <td>{{ flight.atime }}</td>
+        <td>{{ flight.gate }}</td>
+        <td>{{ flight.assignments }}</td>
+        <td>
+          <button (click)="editFlight(flight)"class="button-32" role="button">Edit</button>
+          <button (click)="deleteFlight(flight)"class="button-33" role="button">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/><br/>
+  <h1>
+    {{ flightForm.value.id ? 'Update Flight Information' : 'Add Flight Information' }}
+  </h1>
+<br/><br/>
 
-<form [formGroup]="flightForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="flightForm" (ngSubmit)="submitForm()">
     <div class="form-group">
-        <label for="flightName">Flight Name</label>
-        <input type="text" class="form-control" id="flightName" placeholder="Enter Flight Name" formControlName="flightname" >
+        <label for="flightname">Flight Name</label>
+        <input type="text" class="form-control" id="flightName" placeholder="Enter Flight Name" formControlName="name" >
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
@@ -44,7 +79,37 @@
         <label for="assignments">Aircraft Assignments</label>
         <input type="text" class="form-control" id="assignments" placeholder="Enter Assignments" formControlName="assignments"  >
       </div>
-    <button type="submit" class="btn btn-primary">Add Flight Information</button>
+    <button type="submit" class="btn btn-primary">
+      {{ flightForm.value.id ? 'Update Flight Information' : 'Add Flight Information' }}
+    </button>
   </form>
+
+  <div #content class="hidden-content">
+    <table>
+      <thead>
+        <tr>
+        <th>Flight Name</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Depature</th>
+        <th>Arival</th>
+        <th>Gate</th>
+        <th>Assignments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights; let i = index ">
+          <td>{{ flight.name }}</td>
+          <td>{{ flight.from }}</td>
+          <td>{{ flight.to }}</td>
+          <td>{{ flight.dtime }}</td>
+          <td>{{ flight.atime }}</td>
+          <td>{{ flight.gate }}</td>
+          <td>{{ flight.assignments }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 
   

@@ -1,9 +1,45 @@
 <app-navbar></app-navbar>
-    
-    <h1>Reservation and Ticketing</h1>
 <br/>
+<h1>Reservation and Ticketing</h1>
+<button (click)="generatePDF()" class="button-34" role="button">Generate PDF</button>
+<br/><br/>
+<table>
+    <thead>
+      <tr>
+        <th>Flight Name</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Ticket Price</th>
+        <th>Passenger Name</th>
+        <th>class</th>
+        <th>No of Tickets</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ticket of tickets">
+        <td>{{ ticket.flightname }}</td>
+        <td>{{ ticket.from }}</td>
+        <td>{{ ticket.to }}</td>
+        <td>{{ ticket.price }}</td>
+        <td>{{ ticket.passname }}</td>
+        <td>{{ ticket.class }}</td>
+        <td>{{ ticket.ticket }}</td>
+        <td>
+          <button (click)="editTicket(ticket)"class="button-32" role="button">Edit</button>
+          <button (click)="deleteTicket(ticket)"class="button-33" role="button">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/><br/>
+  <h1>
+    {{ ticketForm.value.id ? 'Update Reservation Information' : 'Add Reservation Information' }}
+  </h1>
+<br/><br/>
 
-<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+
+<form [formGroup]="ticketForm" (ngSubmit)="submitForm()">
     <div class="form-group">
         <label for="flightName">Flight Name</label>
         <input type="text" class="form-control" id="flightName" placeholder="Enter Flight Name" formControlName="flightname" >
@@ -44,7 +80,37 @@
         <label for="inputTicket">Number of Tickets</label>
         <input type="number" class="form-control" id="inputTicket" placeholder="Number of Tickets" formControlName="ticket"  >
       </div>
-    <button type="submit" class="btn btn-primary">Add Reservation</button>
+    <button type="submit" class="btn btn-primary">
+      {{ ticketForm.value.id ? 'Update Reservation' : 'Add Reservation' }}
+    </button>
   </form>
+
+  <div #content class="hidden-content">
+    <table>
+      <thead>
+        <tr>
+          <th>Flight Name</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Ticket Price</th>
+          <th>Passenger Name</th>
+          <th>class</th>
+          <th>No of Tickets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of tickets">
+          <td>{{ ticket.flightname }}</td>
+          <td>{{ ticket.from }}</td>
+          <td>{{ ticket.to }}</td>
+          <td>{{ ticket.price }}</td>
+          <td>{{ ticket.passname }}</td>
+          <td>{{ ticket.class }}</td>
+          <td>{{ ticket.ticket }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 
   

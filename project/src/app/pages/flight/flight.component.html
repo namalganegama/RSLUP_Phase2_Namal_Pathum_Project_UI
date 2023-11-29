@@ -33,14 +33,12 @@
     </tbody>
   </table>
   <br/><br/>
-  <h1>Add Flight Information</h1>
+  <h1>
+    {{ flightForm.value.id ? 'Update Flight Information' : 'Add Flight Information' }}
+  </h1>
 <br/><br/>
 
 <form [formGroup]="flightForm" (ngSubmit)="submitForm()">
-  <div class="form-group">
-    <label for="id">Flight ID</label>
-    <input type="id" class="form-control" id="id"  placeholder="Flight ID" formControlName="id"  readonly>
-  </div>
     <div class="form-group">
         <label for="flightname">Flight Name</label>
         <input type="text" class="form-control" id="flightName" placeholder="Enter Flight Name" formControlName="name" >

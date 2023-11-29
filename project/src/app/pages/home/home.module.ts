@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarModule } from 'src/app/components/navbar/navbar.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -14,10 +15,15 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     HomeComponent
+    
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+
+    FormsModule,
+    ReactiveFormsModule,
+
 
     NavbarModule
   ]

@@ -1,27 +1,5 @@
+<body>
 <app-navbar></app-navbar>
 <br/>
 <h1>Airline Ground Management System</h1>
-<br/><br/>
-<table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of users; let i = index ">
-        <td>{{ i + 1 }}</td>
-        <td>{{ user.name }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.role }}</td>
-        <td>
-          <button (click)="editUser(user)"class="button-32" role="button">Edit</button>
-          <button (click)="deleteUser(user)"class="button-33" role="button">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+</body>

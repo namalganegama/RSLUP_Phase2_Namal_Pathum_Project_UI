@@ -1,0 +1,89 @@
+<app-navbar></app-navbar>
+<br/>
+<h1>Airline Ground Management System</h1>
+<button (click)="generatePDF()" class="button-34" role="button">Generate PDF</button>
+<br/><br/>
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users; let i = index ">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <button (click)="editUser(user)"class="button-32" role="button">Edit</button>
+          <button (click)="deleteUser(user)"class="button-33" role="button">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/><br/>
+  <h1>Add User Information</h1>
+<br/><br/>
+
+  <form  [formGroup]="userForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="id">User ID</label>
+      <input type="id" class="form-control" id="id"  placeholder="User ID" formControlName="id"  readonly>
+    </div>
+    <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="name" class="form-control" id="name" placeholder="Enter Name" formControlName="name" >
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Email" formControlName="email" >
+    </div>
+  <div class="form-group">
+    <label for="role">User Role</label>
+    <select id="inputMeal" class="form-control" id="role" formControlName="role" >
+      <option selected>Choose...</option>
+      <option>Admin</option>
+      <option>Terminal Agent</option>
+      <option>Passenger</option>
+    </select>
+  </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" formControlName="password" >
+    </div>
+    <div class="form-group">
+      <label for="cPassword">Confirm Password</label>
+      <input type="password" class="form-control" id="cPassword" placeholder="Confirm password" >
+    </div>
+    
+    <button type="submit" class="btn btn-primary">
+      {{ userForm.value.id ? 'Update User Information' : 'Add User Information' }}
+    </button>
+  </form>
+
+  <div #content class="hidden-content">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let user of users; let i = index ">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
